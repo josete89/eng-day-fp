@@ -1,0 +1,6 @@
+{
+    "template": "node",
+    "hardReloadOnChange": true,
+    "infiniteLoopProtection": true
+}
+  
