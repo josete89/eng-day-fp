@@ -1,24 +1,28 @@
-const curry = require('./../helpers/curry')
+const curry = require('./../helpers/curry');
 
-const REG_EXP = /\/|&|=/g;
+const SEARCH_REG_EXP = /\/|&|=/g;
 
-// We should apply curry to this function
-const applyRegularExp = (regExp,searchTerm) => {
+/*
+ const applyRegularExp => We should apply curry to this function
+ regExp - RegularExpresion to replace invalid characteres
+ searchTerm - string to sanetize
+ */
+const sanetize = (regExp, searchTerm) => {
   const cleanTerm = searchTerm.replace(regExp, '');
   return cleanTerm;
 }
 
-// This method should construct the url based on the searchterm
-const getFlickrUrl = searchTerm => {
-  const cleanedSearchTerm = searchTerm.trim().toLowerCase()
-  const santizeTermRemovingAndChar = curry(applyRegularExp)(REG_EXP)
-  const term = `https://api.flickr.com/?text=${santizeTermRemovingAndChar(cleanedSearchTerm)}`
-  return term
-
+/* 
+  const getFlickrUrl => This method should construct the url based on the searchterm 
+  searchTerm -  string to search for
+*/
+const getFlickrUrl = (searchTerm) => {
+  // TO-DO: FIX
+  const cleanedSearchTerm = searchTerm.trim().toLowerCase();
+  const santizeSearch = null;
+  const term = `https://api.flickr.com/?text=${santizeSearch(cleanedSearchTerm)}`;
+  return term;
 }
 
 
-
-
-
-module.exports.getFlickrUrl = getFlickrUrl
+module.exports.getFlickrUrl = getFlickrUrl;
