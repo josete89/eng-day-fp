@@ -1,9 +1,9 @@
-import * as express from "express";
+const express = require('express');
 
 const app = express();
 const port = 8080;
 
-app.get("/", (req:express.Request, res:express.Response) => {
+app.get("/", (req,res) => {
   res.json({
     message: "Hello, worlds"
   });
